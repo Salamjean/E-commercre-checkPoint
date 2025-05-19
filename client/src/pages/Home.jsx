@@ -6,7 +6,7 @@ function Home() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/products')
+    fetch('https://ecommerce-backend-3-5qe9.onrender.com/api/products')
       .then(res => {
         if (!res.ok) {
           throw new Error('Erreur lors de la récupération des produits');
@@ -45,7 +45,7 @@ function Home() {
           {featuredProducts.map(product => (
             <div key={product._id} className="product-card">
               <img 
-                src={product.image.startsWith('http') ? product.image : `http://localhost:5000${product.image}`} 
+                src={product.image.startsWith('http') ? product.image : `https://ecommerce-backend-3-5qe9.onrender.com${product.image}`} 
                 alt={product.name}
                 onError={(e) => {
                   e.target.onerror = null;

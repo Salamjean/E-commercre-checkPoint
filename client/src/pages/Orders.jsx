@@ -18,7 +18,7 @@ function Orders() {
           throw new Error('Token non trouvé. Veuillez vous reconnecter.');
         }
 
-        const response = await fetch('http://localhost:5000/api/orders/my-orders', {
+        const response = await fetch('https://ecommerce-backend-3-5qe9.onrender.com/api/orders/my-orders', {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
@@ -56,7 +56,7 @@ function Orders() {
   const handleCancelOrder = async (orderId) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/orders/${orderId}/cancel`, {
+      const response = await fetch(`https://ecommerce-backend-3-5qe9.onrender.com/api/orders/${orderId}/cancel`, {
         method: 'PATCH',
         headers: {
           'Authorization': `Bearer ${token}`

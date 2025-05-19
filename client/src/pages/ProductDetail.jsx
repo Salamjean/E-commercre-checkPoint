@@ -8,7 +8,7 @@ function ProductDetail({ addToCart }) {
   const [imageError, setImageError] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/products/${id}`)
+    fetch(`https://ecommerce-backend-3-5qe9.onrender.com/api/products/${id}`)
       .then(res => res.json())
       .then(data => setProduct(data));
   }, [id]);
@@ -24,7 +24,7 @@ function ProductDetail({ addToCart }) {
       <div className="product-image">
         {!imageError ? (
           <img 
-            src={product.image.startsWith('http') ? product.image : `http://localhost:5000${product.image}`}
+            src={product.image.startsWith('http') ? product.image : `https://ecommerce-backend-3-5qe9.onrender.com${product.image}`}
             alt={product.name} 
             onError={handleImageError}
           />
